@@ -627,6 +627,11 @@ footer{display:flex;align-items:center;justify-content:space-between;padding:10p
   setBtn();
   requestAnimationFrame(frame);
 })();
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js");
+}
+
 </script>
 </body>
 </html>

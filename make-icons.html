@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head><title>Babel Icon Generator</title></head>
+<body style="background:#111;color:#fff;font-family:sans-serif;text-align:center;padding:50px;">
+  <h2>Generating your 192x192 and 512x512 PNG icons...</h2>
+  <script>
+    function generateIcon(size, filename) {
+      const canvas = document.createElement('canvas');
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+
+      // Background matching Babel theme (#0b0b0a)
+      ctx.fillStyle = '#0b0b0a';
+      ctx.fillRect(0, 0, size, size);
+
+      // Outer accent circle
+      ctx.beginPath();
+      ctx.arc(size / 2, size / 2, size * 0.38, 0, Math.PI * 2);
+      ctx.fillStyle = '#151512';
+      ctx.fill();
+      ctx.lineWidth = size * 0.04;
+      ctx.strokeStyle = '#ffd400';
+      ctx.stroke();
+
+      // Yellow glowing core
+      ctx.fillStyle = '#ffd400';
+      ctx.beginPath();
+      ctx.arc(size / 2, size / 2, size * 0.16, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Auto download
+      const link = document.createElement('a');
+      link.download = filename;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+
+    generateIcon(192, 'icon-192.png');
+    setTimeout(() => {
+      generateIcon(512, 'icon-512.png');
+      document.body.innerHTML = '<h2>Icons downloaded to your Downloads folder!</h2><p>Move <b>icon-192.png</b> and <b>icon-512.png</b> into your VS Code project root folder, then delete this file.</p>';
+    }, 400);
+  </script>
+</body>
+</html>
