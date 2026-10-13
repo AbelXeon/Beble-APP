@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.vercel.beble_app_xi.twa",
+        "sha256_cert_fingerprints": ["B2:89:15:03:48:31:4E:82:86:A6:26:F8:1A:89:A0:C7:C4:36:36:F8:FC:C0:F9:F8:E2:E3:CC:E3:6E:60:68:96"]
+      }
+    }]
