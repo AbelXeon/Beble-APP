@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/api/token", "destination": "/api/token.js" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
